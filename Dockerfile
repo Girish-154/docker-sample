@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt update
+RUN apt update -y
 RUN apt install apache2 -y
 
 EXPOSE 80
