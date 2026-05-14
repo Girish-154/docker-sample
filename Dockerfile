@@ -1,8 +1,8 @@
-FROM docker.io/ubuntu
+FROM ubuntu:latest
 
-RUN apt update -y 
+RUN apt update
 RUN apt install apache2 -y
 
+EXPOSE 80
 ONBUILD COPY index.html /var/www/html/
-
-CMD apachectl -D FOREGROUND
+CMD ["apache2ctl", "-D", "FOREGROUND"]
