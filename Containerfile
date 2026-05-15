@@ -1,8 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt update -y
-RUN apt install apache2 -y
+RUN apt update && \
+    apt install -y apache2
 
-EXPOSE 80
-ONBUILD COPY index.html /var/www/html/
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD ["apachectl", "-D", "FOREGROUND"]
